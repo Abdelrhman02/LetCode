@@ -36,7 +36,7 @@ class Solution2
 
     private function getTheMedianOfTheCombinedArray(array $nums1, array $nums2): int|float
     {
-        $nums = $this->mergeArray($nums1, $nums2, count($nums1), count($nums2));
+        $nums = $this->mergeArray($nums1, $nums2);
         return $this->getTheMedianOfSingleArray($nums);
     }
 
@@ -85,3 +85,50 @@ echo $solution->findMedianSortedArrays([1, 2, 3, 8, 10, 12, 14, 15, 16], [9, 11,
 
 
 
+
+
+
+/**
+ * Summary of ticTakPuzzle
+ * @param string $str1
+ * @param string $str2
+ * @return string
+ */
+function ticTakPuzzle(string $str1, string $str2) :string
+{
+    $a = $str1;
+    $b = $str2;
+    $c = $a . $b;
+    $d = &$a;
+    $e = $a;
+    unset($a);
+    $f = $d . $e;
+
+    return $c . $f;
+}
+
+$extensions = array(
+    'pdo_mysql',
+    'iconv',
+    'dom',
+    'simplexml',
+    'gd',
+    'exif',
+    'file_info',
+    'mbstring',
+    'zlib',
+    'zip',
+    'intl',
+    'opcache',
+    'curl'
+);
+
+echo '\n';
+
+foreach ($extensions as $extension) {
+    if (extension_loaded($extension)) {
+        echo $extension . ' is installed.' . PHP_EOL;
+    } else {
+        echo $extension . ' is NOT installed.' . PHP_EOL;
+    }
+}

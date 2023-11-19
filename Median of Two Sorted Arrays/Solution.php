@@ -3,9 +3,9 @@
 class Solution
 {
     /**
-     * @param Integer[] $nums1
-     * @param Integer[] $nums2
-     * @return Float
+     * @param int[] $nums1
+     * @param int[] $nums2
+     * @return float|int
      */
     function findMedianSortedArrays(array $nums1, array $nums2): float|int
     {
@@ -36,7 +36,7 @@ class Solution
 
     private function getTheMedianOfTheCombinedArray(array $nums1, array $nums2): int|float
     {
-        $nums = $this->mergeArray($nums1, $nums2, count($nums1), count($nums2));
+        $nums = $this->mergeArray($nums1, $nums2);
         return $this->getTheMedianOfSingleArray($nums);
     }
 
